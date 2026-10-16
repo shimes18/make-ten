@@ -9,34 +9,48 @@
         <link rel="stylesheet" href="make-ten.css">
     </head>
     <body>
-        <div id="heading"><b> MAKE TEN </B></div>
+        <div id="heading"><img src="C:\Users\NIC\Documents\GitHub\hackclub\make-ten\make-ten\images\10-closet.webp" alt="image of 10" id="pic10" ><b> MAKE TEN </B></div>
         <div id="desc"> Use different operators on digit to get 10 as answer </div> <br><br>
+        <div id="home">
+         <div id="rules"><h1>RULE</h1>
+            1. You can use digits given in order and the order can't be changed. <br><br>
+            2. Only use of +,-,* and / operators is allowed <br><br>
+            3. You can add as much as 2 brackets in one space <br><br>
+            4. Invalid bracket placement is not allowed and will result in point deduction <br><br>
+            5. Correct answer gives +2 points and incorrect deducts 1 point <br><br>
+            6. Some numbers have no solutions so just click "NEW" button <br><br>
+        </div> <br> <br>
+         <div id="start"><button id="st" onclick="bleh()">Start</button></div>
+        </div>
 
-        <div id="score"></div>
+        <div id="all">
+         <div id="score"></div>
          
-        <div id="number"> The number you have to use is:  <br> <div id="no"></div> </div>
+         <div id="number"> The number you have to use is:  <br> <div id="no"></div> </div>
 <br><br>
         <div id="inp">
              <input type="text" id="o5" placeholder="±" maxlength="1" required></input>
              <input type="text" id="b1" maxlength="2" placeholder="("> 
              <input type="text" id="o1" placeholder="±" maxlength="1" required></input> 
-             <div id="n1"></div>
+             <input type="text" readonly id="n1">
              <input type="text" id="b2" maxlength="2" placeholder="(">
              <input type="text" id="o2" placeholder="-" maxlength="1" required></input>
              <input type="text" id="b3" maxlength="2" placeholder=")"> 
-             <div id="n2"></div>
+             <input type="text" readonly id="n2">
              <input type="text" id="b4" maxlength="2" placeholder="( )"> 
              <input type="text" id="o3" placeholder="*" maxlength="1" required></input>
              <input type="text" id="b5" maxlength="2" placeholder="( )">
-             <div id="n3"></div> 
+             <input type="text" readonly id="n3"> 
              <input type="text" id="b6" maxlength="2" placeholder="( )"> 
              <input type="text" id="o4" placeholder="/" maxlength="1" required></input>
              <input type="text" id="b7" maxlength="2" placeholder="( )">
-             <div id="n4"></div>
+             <input type="text" readonly id="n4">
              <input type="text" id="b8" maxlength="2" placeholder="( )"> 
         </div><br><br>
-        <div id="but"><button id="check" onclick="func()">CHECK</button></div>
+        <div id="but"><button id="check" onclick="func()">CHECK</button>
+        <button id="new" onclick="new2()"> NEW </button> </div>
         <div id="value"></div>
+        </div>
         <script src="make-ten.js" async defer></script>
     </body>
 </html>

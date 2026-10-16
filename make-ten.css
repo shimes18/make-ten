@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');   
 body{
     background-color: #eaff7b;
     color: #1f1010;
+    display: flex;
+    flex-direction: column;
+    font-family: montserrat;
 }
 
 #heading{
@@ -50,7 +54,11 @@ input{
     display: inline-block;
 }
 
-#check{
+#but{
+    text-align: center;
+}
+
+button{
     background-color: #907bff;
     border-radius: 7px;
     border:none;
@@ -60,15 +68,16 @@ input{
     cursor: pointer;
     padding: 10px 25px ;
     transition: all 0.1s ease-in-out;
+    width:fit-content;
 }
 
-#check:hover{
+button:hover{
     size:40px;
     transform: translateX(2px) translateY(-2px);
     box-shadow: 0 0 30px #907bff;
 }
 
-#check:active{
+button:active{
     background-color: gray;
     border-radius: 7px;
     border:none;
@@ -80,11 +89,24 @@ input{
     transition: all 0.1s ease-in-out;
 }
 
-#but{
+
+#start{
     text-align: center;
 }
 
 #score{
     text-align: center;
     font-size: 50px;
+}
+
+#pic10{
+    size:30px 30px ;
+
+}
+
+#rules{
+    text-align:center;
+    align-items:center;
+    background-color: #907bff;
+    color:white;
 }

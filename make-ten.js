@@ -1,17 +1,21 @@
 let point=0;
-document.getElementById("score").innerHTML= "Score: " + point;
+
+    document.getElementById("all").style.display= "none";
 function rand(){
     return Math.floor(Math.random()*10);
 }
 
+function start(){
+    document.getElementById("all").style.display= "block";
 let a=rand(),b=rand(),c=rand(),d=rand();
+document.getElementById("score").innerHTML= "Score: " + point;
 
 document.getElementById("no").innerText = "" + a + b + c + d;
 
-document.getElementById("n1").innerText = a;
-document.getElementById("n2").innerText = b;
-document.getElementById("n3").innerText = c;
-document.getElementById("n4").innerText = d;
+document.getElementById("n1").value = a;
+document.getElementById("n2").value = b;
+document.getElementById("n3").value = c;
+document.getElementById("n4").value = d;
 
 
 const input=document.getElementById("o1");
@@ -47,7 +51,7 @@ input4.addEventListener("input",operator4);
 
 const input5=document.getElementById("o5");
 function operator5(){
-    input5.value= input5.value.replace( /[^+\-*/% ]/g , "");
+    input5.value= input5.value.replace( /[^+\- ]/g , "");
 }
 
 input5.addEventListener("input",operator5);
@@ -112,7 +116,6 @@ br8.addEventListener("input",op8);
 const button=document.getElementById("check");
 
 button.addEventListener("click", function func(){
-    let point=2;
     let r1=input.value;
     let r2=input2.value;
     let r3=input3.value;
@@ -131,14 +134,26 @@ button.addEventListener("click", function func(){
         sum = eval(`${r5} ${bra1} ${r1} a ${bra2} ${r2} ${bra3} b ${bra4} ${r3} ${bra5} c ${bra6} ${r4} ${bra7} d ${bra8}`);
     } catch(e){
         document.getElementById("value").innerHTML="invalid expression!";
+        point=point-1;
         return;
     }
     if (sum==10){
-        document.getElementById("value").innerHTML= "Correct answer! " + r5+bra1+r1+a+bra2+r2+bra3+b+bra4+r3+bra5+c+bra6+r4+bra7+d+bra8 + "is equal to 10!";
+        document.getElementById("value").innerHTML= "Correct answer! " + r5+bra1+r1+a+bra2+r2+bra3+b+bra4+r3+bra5+c+bra6+r4+bra7+d+bra8 + " is equal to 10!";
         point=point+2;
+        document.getElementById("score").innerHTML= "Score: " + point;
     }
     else{
         document.getElementById("value").innerHTML= "Incorrect answer! " + r5+bra1+r1+a+bra2+r2+bra3+b+bra4+r3+bra5+c+bra6+r4+bra7+d+bra8 +"=" + sum + " which is  not equal to 10!";
     }
+    document.getElementById("score").innerHTML= "Score: " + point;
+});
+}
+
+const button1=document.getElementById("st")
+
+button1.addEventListener("click",function bleh(){
+    start();
+    document.getElementById("home").style.display= "none";
 });
 
+document.getElementById("new").addEventListener("click",start);
