@@ -83,3 +83,8 @@ input{
 #but{
     text-align: center;
 }
+
+#score{
+    text-align: center;
+    font-size: 50px;
+}
