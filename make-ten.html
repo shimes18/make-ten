@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>MAKE TEN</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="make-ten.css">
-    </head>
-    <body>
-        <div id="heading"><img src="C:\Users\NIC\Documents\GitHub\hackclub\make-ten\make-ten\images\10-closet.webp" alt="image of 10" id="pic10" ><b> MAKE TEN </B></div>
-        <div id="desc"> Use different operators on digit to get 10 as answer </div> <br><br>
-        <div id="home">
-         <div id="rules"><h1>RULE</h1>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MAKE TEN</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="make-ten.css">
+</head>
+
+<body>
+    <div id="heading"><img
+            src="https://imgs.search.brave.com/N_QGlnitmHNKr6TF13S3DMdL7CKzz-7s8InuD4lOeIw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kM3dv/NXdvanZ1djdsLmNs/b3VkZnJvbnQubmV0/L3Rfc3F1YXJlX2xp/bWl0ZWRfNDgwL2lt/YWdlcy5zcHJlYWtl/ci5jb20vb3JpZ2lu/YWwvZTg5NjgyNzJj/OGQ5OTU1NTBjMWMx/ZDNkZWU3Y2M1MzMu/anBn"
+            alt="image of 10" id="pic10"><b> MAKE TEN </B><img
+            src="https://imgs.search.brave.com/Em7wCwzzgmcPaCfxzvNhiNJjzsPp8RWsnzusgJg6cxI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9iLnRo/dW1icy5yZWRkaXRt/ZWRpYS5jb20vM1Ba/VEd1cEtLUmN3YjhN/VVJBT1FvVEpyXzA2/WDRyWHJESkY0cVlG/ajRsUS5qcGc" id="pichands"
+            alt="2 hands with all fingers out emoji"></div>
+    <div id="desc"> Use different operators on digit to get 10 as answer </div> <br><br>
+    <hr><br>
+    <div id="home">
+        <div id="rules">
+            <h1>RULE</h1>
             1. You can use digits given in order and the order can't be changed. <br><br>
             2. Only use of +,-,* and / operators is allowed <br><br>
             3. You can add as much as 2 brackets in one space <br><br>
@@ -20,37 +28,56 @@
             5. Correct answer gives +2 points and incorrect deducts 1 point <br><br>
             6. Some numbers have no solutions so just click "NEW" button <br><br>
         </div> <br> <br>
-         <div id="start"><button id="st" onclick="bleh()">Start</button></div>
-        </div>
+        <div id="start"><button id="st" onclick="bleh()">Start</button></div>
+    </div>
 
-        <div id="all">
-         <div id="score"></div>
-         
-         <div id="number"> The number you have to use is:  <br> <div id="no"></div> </div>
-<br><br>
+    <div id="all">
+        <div id="score"></div>
+        <br>
+        <div id="number"> The number you have to use is: <br>
+            <div id="no"></div>
+        </div>
+        <br><br>
         <div id="inp">
-             <input type="text" id="o5" placeholder="±" maxlength="1" required></input>
-             <input type="text" id="b1" maxlength="2" placeholder="("> 
-             <input type="text" id="o1" placeholder="±" maxlength="1" required></input> 
-             <input type="text" readonly id="n1">
-             <input type="text" id="b2" maxlength="2" placeholder="(">
-             <input type="text" id="o2" placeholder="-" maxlength="1" required></input>
-             <input type="text" id="b3" maxlength="2" placeholder=")"> 
-             <input type="text" readonly id="n2">
-             <input type="text" id="b4" maxlength="2" placeholder="( )"> 
-             <input type="text" id="o3" placeholder="*" maxlength="1" required></input>
-             <input type="text" id="b5" maxlength="2" placeholder="( )">
-             <input type="text" readonly id="n3"> 
-             <input type="text" id="b6" maxlength="2" placeholder="( )"> 
-             <input type="text" id="o4" placeholder="/" maxlength="1" required></input>
-             <input type="text" id="b7" maxlength="2" placeholder="( )">
-             <input type="text" readonly id="n4">
-             <input type="text" id="b8" maxlength="2" placeholder="( )"> 
+            <input type="text" id="o5" placeholder="±" maxlength="1" required></input>
+            <input type="text" id="b1" maxlength="2" placeholder="(">
+            <input type="text" id="o1" placeholder="±" maxlength="1" required></input>
+            <input type="text" readonly id="n1">
+            <input type="text" id="b2" maxlength="2" placeholder="(">
+            <input type="text" id="o2" placeholder="-" maxlength="1" required></input>
+            <input type="text" id="b3" maxlength="2" placeholder=")">
+            <input type="text" readonly id="n2">
+            <input type="text" id="b4" maxlength="2" placeholder="( )">
+            <input type="text" id="o3" placeholder="*" maxlength="1" required></input>
+            <input type="text" id="b5" maxlength="2" placeholder="( )">
+            <input type="text" readonly id="n3">
+            <input type="text" id="b6" maxlength="2" placeholder="( )">
+            <input type="text" id="o4" placeholder="/" maxlength="1" required></input>
+            <input type="text" id="b7" maxlength="2" placeholder="( )">
+            <input type="text" readonly id="n4">
+            <input type="text" id="b8" maxlength="2" placeholder="( )">
         </div><br><br>
         <div id="but"><button id="check" onclick="func()">CHECK</button>
-        <button id="new" onclick="new2()"> NEW </button> </div>
+            <button id="new" onclick="new2()"> NEW </button>
+        </div> <br>
         <div id="value"></div>
+        <br> <br>
+        <div id="homea"> Do you want to look at the rules again? <br><br>
+            <button id="homeag" onclick="homeagain()">Home</button>
         </div>
-        <script src="make-ten.js" async defer></script>
-    </body>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <hr>
+    <div id="promo">
+        <b>Made by ank </b><br>
+        <a href="https://www.instagram.com/ank_0318"><img
+                src="https://imgs.search.brave.com/Tr-BmVSNJkv9RNMixQI4y70GEWernB_zrDptOl13eS4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/cG5nLWNsaXBhcnQv/MjAxODA2MjYvb3Vy/bWlkL3BuZ3RyZWUt/aW5zdGFncmFtLWlj/b24taW5zdGFncmFt/LWxvZ28tcG5nLWlt/YWdlXzM1ODQ4NTIu/cG5n"></a>
+        <a href="https://hackclub.enterprise.slack.com/team/U0C066MP0UF"><img
+                src="https://imgs.search.brave.com/Ra_YRWfQajtyL0Hhedy_emZ8YSMObZHozlJPlvr_Ees/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/aWNvbnM4LmNvbS9l/eHRlcm5hbC10YWwt/cmV2aXZvLWNvbG9y/LXRhbC1yZXZpdm8v/MTIwMC9leHRlcm5h/bC1zbGFjay1hbi1v/bmxpbmUtaW5zdGFu/dC1tZXNzYWdpbmct/YW5kLWNvbGxhYm9y/YXRpb24tc3lzdGVt/LWxvZ28tY29sb3It/dGFsLXJldml2by5q/cGc"></a>
+        <a href="https://github.com/shimes18"><img
+                src="https://imgs.search.brave.com/9LZ2OB72NuDx0NYD30RYkUrRcvCAbsFO1Op1oPO1wG0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/anNkZWxpdnIubmV0/L2doL2hvbWFyci1s/YWJzL2Rhc2hib2Fy/ZC1pY29ucy9zdmcv/Z2l0aHViLnN2Zw"></a>
+    </div>
+    <script src="make-ten.js" async defer></script>
+</body>
+
 </html>
