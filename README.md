@@ -23,7 +23,7 @@ AI usage:
 
 Preview:
 > Right after you visit the website , youre greeted with this 
- ![Rules tab](<images/IMG_20261021_224633_302.png>)
+ ![Rules tab](images/IMG_20261021_224633_302.jpg)
 
 >After clicking start you see something like this:
  ![Actual game](<images/Screenshot 2026-10-17 191046.png>)
