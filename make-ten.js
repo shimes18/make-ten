@@ -8,10 +8,17 @@ function rand() {
 let ans="";
 let ans_array=[];
 
-function change(){
-    document.getElementById("score").innerHTML = "Point: " + point;
-}
+let savedhs= localStorage.getItem("hs") || 0; 
 
+
+function change(){
+    document.getElementById("score").style.display="block";
+    document.getElementById("highscore").style.display="block";
+    document.getElementById("score").innerHTML = "Point: " + point;
+    savedhs= localStorage.getItem("hs") || 0;
+    document.getElementById("highscore").innerHTML = "Highscore: " + savedhs;
+}
+let done;
 function createnumbs(){
     let numb;
     do{
@@ -20,6 +27,8 @@ function createnumbs(){
     [a,b,c,d] = numb;
 }
 function start() {
+    change();
+    done=false;
     document.getElementById("all").style.display = "block";
     createnumbs();
 
@@ -126,7 +135,8 @@ function start() {
 
 const button = document.getElementById("check");
 
-button.addEventListener("click", function checker() {
+button.onclick =  function checker() {
+        if (done){return}
         let r1 = input.value;
         let r2 = input2.value;
         let r3 = input3.value;
@@ -147,10 +157,12 @@ button.addEventListener("click", function checker() {
                 document.getElementById("value").innerHTML = "Correct answer! " + r5 + bra1 + r1 + a + bra2 + r2 + bra3 + b + bra4 + r3 + bra5 + c + bra6 + r4 + bra7 + d + bra8 + " is equal to 10!";
                 point = point+3;
                 change();
+                done=true;
+                checkhighscore();
             }
             else {
                 document.getElementById("value").innerHTML = "Incorrect answer! " + r5 + bra1 + r1 + a + bra2 + r2 + bra3 + b + bra4 + r3 + bra5 + c + bra6 + r4 + bra7 + d + bra8 + "=" + sum + " which is not equal to 10!";
-                point = point - 2;
+                point = point - 1;
                 change();
 
             }
@@ -161,14 +173,16 @@ button.addEventListener("click", function checker() {
             return;
         }
         change();
-    });
+}
 
 const button2 = document.getElementById("homeag")
 
-button2.addEventListener("click", function homeagain() {
+button2.onclick = function homeagain() {
     document.getElementById("home").style.display = "block";
     document.getElementById("all").style.display = "none";
-});
+    document.getElementById("score").style.display="none";
+    document.getElementById("highscore").style.display="none";
+};
 
 }
 
@@ -180,6 +194,9 @@ function bleh() {
 };
 
 function new2(){
+    if (!done){
+        point=point-1;
+    }
     start();
 };
 
@@ -223,7 +240,15 @@ function checkmakesten(numb, ans_array){
 }
 
 document.getElementById("give_up").addEventListener("click", function (){
-    document.getElementById("value").innerHTML = "Answer: " + ans + "= 10";
+    if (done) {return}
+    document.getElementById("value").innerHTML = "Answer: " + ans.slice(1,-1) + "= 10";
+    done=true;
     point = point - 1;
     change();
 });
+
+function checkhighscore(){
+    if (savedhs<point){
+        localStorage.setItem("hs",point);
+    }
+}
