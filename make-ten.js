@@ -8,6 +8,10 @@ function rand() {
 let ans="";
 let ans_array=[];
 
+function change(){
+    document.getElementById("score").innerHTML = "Point: " + point;
+}
+
 function createnumbs(){
     let numb;
     do{
@@ -141,14 +145,22 @@ button.addEventListener("click", function checker() {
             sum = eval(`${r5} ${bra1} ${r1} a ${bra2} ${r2} ${bra3} b ${bra4} ${r3} ${bra5} c ${bra6} ${r4} ${bra7} d ${bra8}`);
             if (sum == 10) {
                 document.getElementById("value").innerHTML = "Correct answer! " + r5 + bra1 + r1 + a + bra2 + r2 + bra3 + b + bra4 + r3 + bra5 + c + bra6 + r4 + bra7 + d + bra8 + " is equal to 10!";
+                point = point+3;
+                change();
             }
             else {
                 document.getElementById("value").innerHTML = "Incorrect answer! " + r5 + bra1 + r1 + a + bra2 + r2 + bra3 + b + bra4 + r3 + bra5 + c + bra6 + r4 + bra7 + d + bra8 + "=" + sum + " which is not equal to 10!";
+                point = point - 2;
+                change();
+
             }
         } catch (e) {
             document.getElementById("value").innerHTML = "invalid expression!";
+            point = point - 1;
+            change();
             return;
         }
+        change();
     });
 
 const button2 = document.getElementById("homeag")
@@ -212,4 +224,6 @@ function checkmakesten(numb, ans_array){
 
 document.getElementById("give_up").addEventListener("click", function (){
     document.getElementById("value").innerHTML = "Answer: " + ans + "= 10";
+    point = point - 1;
+    change();
 });
