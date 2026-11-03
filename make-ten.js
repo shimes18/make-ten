@@ -5,20 +5,19 @@ document.getElementById("all").style.display = "none";
 function rand() {
     return Math.floor(Math.random() * 10);
 }
+let ans="";
+let ans_array=[];
 
 function createnumbs(){
-    const numb;
+    let numb;
     do{
         numb=[rand(),rand(),rand(),rand()]
     }while (!checkmakesten(numb));
     [a,b,c,d] = numb;
-    return a,b,c,d,numb;
 }
 function start() {
     document.getElementById("all").style.display = "block";
     createnumbs();
-
-    checkmakesten();
 
     document.getElementById("no").innerText = "" + a + b + c + d;
 
@@ -172,30 +171,44 @@ document.getElementById("new").addEventListener("click", function new2(){
     start();
 });
 
-function checkmakesten(numb){
+
+
+function checkmakesten(numb, ans_array){
 
     if (numb.length===1){
         return Math.abs(numb[0]-10)<0.000000000001;
     }
 
-    for (let i=0;i<(numb.length-1);i++{
+    for (let i=0;i<(numb.length-1);i++){
         const x = numb[i];
         const y = numb[i+1];
+        let tx= ans_array[i];
+        let ty= ans_array[i+1];
 
-        const operations = [x+y, x-y, x*y]
+        const operations = [x+y, x-y, x*y];
+        let ans_subarray = ["(" + tx  + "+" + ty +")" , "(" + tx  + "-" + ty +")" , "(" + tx  + "*" + ty +")" ]
 
         if (y!=0){
             operations.push(x/y);
+            ans_subarray.push("(" + tx  + "/" + ty +")")
         }
-        const r;
+
+        let r;
         for ( r of operations){
             const check = [...numb];
             check.splice(i,2,r);
 
-            if (checkmakesten(check)){
+            const checktext = [...ans_array];
+            checktext.splice(i,2,ans_subarray[operations.indexOf(r)]);
+
+            if (checkmakesten(check,checktext)){
                 return true;
             }
         }
     }
     return false;
+}
+
+function giveup(){
+    document.getElementById("value").innerHTML = "Answer:" + ans;
 }
