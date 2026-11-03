@@ -1,8 +1,10 @@
-w # make-ten
-A web based mini-game about making ten
+# make-ten
+A web based mini-game about making ten from given 4 random numbers
+
+**THE START BUTTON IS A BIT BELOW RULES TAB , SCROLL AND CLICK ON THE START BUTTON TO PLAY**
 
 Why I built it
->I saw someone on tiktok do this and decided it would be a fun idea for a website as a beginner in this kind of stuff
+>I saw someone on tiktok do this and decided it would be a fun idea for a website as a beginner in javascript
 
 Languages used
 >HTML
@@ -24,7 +26,7 @@ AI usage:
 
 Preview:
 > Right after you visit the website , youre greeted with this 
- ![Rules tab](images/IMG_20261021_224633_302.jpg)
+![Rule page](images/image.png)
 
 >After clicking start you see something like this:
-![Actual game](images/image.png)
+![Actual game page](images/image-1.png)
