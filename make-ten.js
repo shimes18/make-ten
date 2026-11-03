@@ -6,10 +6,19 @@ function rand() {
     return Math.floor(Math.random() * 10);
 }
 
+function createnumbs(){
+    const numb;
+    do{
+        numb=[rand(),rand(),rand(),rand()]
+    }while (!checkmakesten(numb));
+    [a,b,c,d] = numb;
+    return a,b,c,d,numb;
+}
 function start() {
     document.getElementById("all").style.display = "block";
+    createnumbs();
 
-    a = rand(), b = rand(), c = rand(), d = rand();
+    checkmakesten();
 
     document.getElementById("no").innerText = "" + a + b + c + d;
 
@@ -162,3 +171,31 @@ button1.addEventListener("click", function bleh() {
 document.getElementById("new").addEventListener("click", function new2(){
     start();
 });
+
+function checkmakesten(numb){
+
+    if (numb.length===1){
+        return Math.abs(numb[0]-10)<0.000000000001;
+    }
+
+    for (let i=0;i<(numb.length-1);i++{
+        const x = numb[i];
+        const y = numb[i+1];
+
+        const operations = [x+y, x-y, x*y]
+
+        if (y!=0){
+            operations.push(x/y);
+        }
+        const r;
+        for ( r of operations){
+            const check = [...numb];
+            check.splice(i,2,r);
+
+            if (checkmakesten(check)){
+                return true;
+            }
+        }
+    }
+    return false;
+}
