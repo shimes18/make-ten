@@ -20,10 +20,11 @@ How to access:
 AI usage:
 > used ai to debug 3-4 times (only used it find bug and did mosst of the debugging )
 > used google overview when looking for syntax (Only few times, mostly I used w3school or geek4geek)
+>Used to learn concepts while adding checkmakesten function
 
 Preview:
 > Right after you visit the website , youre greeted with this 
  ![Rules tab](images/IMG_20261021_224633_302.jpg)
 
 >After clicking start you see something like this:
- ![Actual game](<images/Screenshot 2026-10-17 191046.png>)
+![Actual game](images/image.png)

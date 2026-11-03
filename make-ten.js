@@ -12,7 +12,7 @@ function createnumbs(){
     let numb;
     do{
         numb=[rand(),rand(),rand(),rand()]
-    }while (!checkmakesten(numb));
+    }while (!checkmakesten(numb, numb.map(String)));
     [a,b,c,d] = numb;
 }
 function start() {
@@ -122,7 +122,7 @@ function start() {
 
 const button = document.getElementById("check");
 
-button.addEventListener("click", function func() {
+button.addEventListener("click", function checker() {
         let r1 = input.value;
         let r2 = input2.value;
         let r3 = input3.value;
@@ -162,20 +162,21 @@ button2.addEventListener("click", function homeagain() {
 
 const button1 = document.getElementById("st")
 
-button1.addEventListener("click", function bleh() {
+function bleh() {
     start();
     document.getElementById("home").style.display = "none";
-});
+};
 
-document.getElementById("new").addEventListener("click", function new2(){
+function new2(){
     start();
-});
+};
 
 
 
 function checkmakesten(numb, ans_array){
 
     if (numb.length===1){
+        ans= ans_array[0];
         return Math.abs(numb[0]-10)<0.000000000001;
     }
 
@@ -209,6 +210,6 @@ function checkmakesten(numb, ans_array){
     return false;
 }
 
-function giveup(){
-    document.getElementById("value").innerHTML = "Answer:" + ans;
-}
+document.getElementById("give_up").addEventListener("click", function (){
+    document.getElementById("value").innerHTML = "Answer: " + ans + "= 10";
+});
